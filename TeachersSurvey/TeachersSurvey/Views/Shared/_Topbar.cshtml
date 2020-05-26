@@ -1,0 +1,48 @@
+﻿  <!--Start topbar header-->
+    <header class="topbar-nav">
+        <nav class="navbar navbar-expand fixed-top gradient-ibiza">
+            <ul class="navbar-nav mr-auto align-items-center">
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                </li>
+            </ul>
+            <ul class="navbar-nav align-items-center right-nav-link">
+                <li>
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" href="/Answer/Index">
+                        <i class="icon-folder"></i>
+                    </a>
+
+                </li>
+                <li>
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" href="/Answer/Create">
+                        <i class="icon-pencil"></i>
+                    </a>
+
+                </li>
+
+                @if (Session["Admin"] != null)
+                {
+                    <li>
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" href="/Teacher/Index">
+                            <i class="icon-people"></i>
+                        </a>
+
+                    </li>
+                    <li class="nav-item dropdown-lg">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" href="/Question/Index">
+                            <i class="icon-bell"></i><span class="badge badge-primary badge-up">10</span>
+                        </a>
+                    </li>
+                }
+
+                <li class="nav-item dropdown-lg">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" href="/Login/LogOut">
+                        <i class="icon-power"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown-lg"></li>
+            </ul>
+        </nav>
+    </header>
+<!--End topbar header-->

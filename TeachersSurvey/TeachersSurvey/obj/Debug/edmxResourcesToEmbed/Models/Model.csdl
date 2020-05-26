@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbServeySystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TblAnswerLine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AnswerId" Type="Int32" />
+    <Property Name="Question" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Answer" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblAnswers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeacherCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TeacherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Score" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IsComplete" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblQuestions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DbServeySystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TblAnswerLine" EntityType="Self.TblAnswerLine" />
+    <EntitySet Name="TblAnswers" EntityType="Self.TblAnswers" />
+    <EntitySet Name="TblQuestions" EntityType="Self.TblQuestions" />
+    <EntitySet Name="TblTeacher" EntityType="DbServeySystemModel.TblTeacher" />
+  </EntityContainer>
+  <EntityType Name="TblTeacher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAdmin" Type="Boolean" />
+  </EntityType>
+</Schema>

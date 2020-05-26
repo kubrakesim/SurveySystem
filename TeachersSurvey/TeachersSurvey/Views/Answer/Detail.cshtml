@@ -1,0 +1,20 @@
+﻿@model IEnumerable<TeachersSurvey.Models.TblAnswerLine>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int number = 1;
+}
+
+<div class="body">
+    <br />
+    <h4 class="text-center text-black-50">Anket Detay Sayfası </h4>
+    <div class="table-responsive">
+     @foreach(var item in Model)
+     {
+        <span><b>@number] </b>@item.Question</span>
+        <br /><span>@item.Answer</span>
+        <br /><br /><br />
+         number++;
+     }
+    </div>
+</div>
+
